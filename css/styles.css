@@ -1,11 +1,263 @@
-* {
-    box-sizing: border-box;
+/* ====================
+    VARIABLES
+==================== */
+
+:root {
+    --dark-purple: #1B1220;
+    --teal: hsl(186 100% 69%);
+}
+
+/* ====================
+    STYLES
+==================== */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    max-height: 100vh;
 }
 
 body {
-    
+    height: 100%;
+    font-family: 'Open Sans', sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Monomaniac One', sans-serif;
+    font-weight: unset;
+    margin: 0 0 1rem;
+}
+
+h1 {
+    font-size: clamp(1rem, 4vw + 1rem,4rem);
+    line-height: 4rem;
+}
+
+h2 {
+    font-size: clamp(1rem, 3vw + 1rem,3rem);
+    line-height: 3rem;
+}
+
+a {
+    text-decoration: none;
+}
+
+.container {
+    max-width: 80%;
+    margin: 0 auto;
+}
+
+.container-sml {
+    max-width: 60%;
+    margin: 0 auto;
+}
+
+#introWrap {
+    background-image: linear-gradient(167deg, rgb(0 0 0 / 75%), rgb(160 0 163 / 52%)), url(../images/cyberpunk-bg.webp);
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: #fff;
+    background-attachment: fixed;
 }
 
 header {
-    
+    display: flex;
+    justify-content: space-between;
+    padding: 16px;
 }
+
+.logo {
+    font-size: 32px;
+    font-weight: 600;
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+    gap: 22px;
+}
+
+nav a {
+    color: #fff;
+}
+
+nav a:hover {
+    color: #fff;
+}
+
+.intro {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 200px 16px;
+}
+
+.intro .text {
+    max-width: 600px;
+    font-size: 1.4rem;
+    font-weight: 300;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.intro .text h1 {
+    margin: 0;
+}
+
+.glowing-btn {
+    position: relative;
+    width: fit-content;
+    color: var(--teal);
+    cursor: pointer;
+    padding: .8rem 1.9rem;
+    border: 0.15em solid var(--teal);
+    border-radius: 0.45em;
+    background: none;
+    perspective: 2em;
+    font-size: .9rem;
+    font-weight: 300;
+    text-transform: uppercase;
+  
+    -webkit-box-shadow: inset 0px 0px 0.5em 0px var(--teal),
+      0px 0px 0.5em 0px var(--teal);
+    -moz-box-shadow: inset 0px 0px 0.5em 0px var(--teal),
+      0px 0px 0.5em 0px var(--teal);
+    box-shadow: inset 0px 0px 0.5em 0px var(--teal),
+      0px 0px 0.5em 0px var(--teal);
+    animation: border-flicker 2s linear infinite;
+    animation-duration: 2500ms;
+  }
+
+  .glowing-btn:hover {
+    color: var(--teal);
+    text-shadow: none;
+    animation: none;
+  }
+  
+  .glowing-btn:hover .glowing-txt {
+    animation: none;
+  }
+  
+  .glowing-btn:hover:before {
+    filter: blur(1.5em);
+    opacity: 1;
+  }
+  
+  .glowing-btn:hover:after {
+    opacity: 1;
+  }
+
+  .intro .intro-image {
+    background-color: #fff;
+}
+
+#informationWrap {
+    text-align: center;
+    padding: 5rem 0;
+}
+
+.card-wrap {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.card {
+    flex: 1;
+}
+
+.card .image {
+    background-color: var(--dark-purple);
+    border-radius: 12px;
+    width: 100%;
+    height: 200px;
+    margin-bottom: 20px;
+}
+
+#quoteWrap {
+    background-color: var(--dark-purple);
+    color: #fff;
+    padding: 5rem 0;
+}
+
+.quote {
+    font-size: clamp(1rem, 3vw + 1rem,3rem);
+    margin: 0;
+    font-weight: 300;
+}
+
+.author {
+    display: block;
+    text-align: right;
+    font-size: clamp(1rem, 2vw + 1rem,2rem);
+    font-weight: 600;
+}
+
+footer {
+    background-color: var(--dark-purple);
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    font-size: 14px;
+}
+
+
+/* ====================
+    ANIMATIONS
+======================= */
+  
+  @keyframes border-flicker {
+    0% {
+      opacity: 0.1;
+    }
+    2% {
+      opacity: 1;
+    }
+    4% {
+      opacity: 0.1;
+    }
+
+    18% {
+        opacity: 0.1;
+    }
+
+    22% {
+    opacity: 1;
+    }
+    
+    24% {
+    opacity: 0.1;
+    }
+  
+    32% {
+      opacity: 1;
+    }
+    70% {
+      opacity: 0.7;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  @media only screen and (max-width: 600px) {
+    .glowing-btn{
+      font-size: 1em;
+    }
+  }

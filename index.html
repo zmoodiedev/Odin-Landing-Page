@@ -8,7 +8,7 @@
 
     <link rel="preload" href="./fonts/Mona-Sans.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="./fonts/Hubot-Sans.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,0,0" />
 
     <link rel="stylesheet" href="./css/styles.css">
 </head>
@@ -27,6 +27,9 @@
                         <li><a href="#">Feedback</a></li>
                         <li><a href="#">It's Time</a></li>
                     </ul>
+                    <span class="mobile-menu-icon material-symbols-rounded">
+                        bolt
+                    </span>
                 </nav>
             </div>
         </header>
@@ -35,11 +38,11 @@
             <div class="text">
                 <h1>The Future is Now</h1>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                <button class="glowing-btn">Click here</button>
+                <div class="intro-btn">
+                    <button class="glowing-btn"><span class="glowing-text">Click Here</span></button>
+                </div>
             </div>
-            <div class="intro-image">
-                
-            </div>
+            <div class="intro-image"></div>
         </div>
     </section>
 
@@ -96,9 +99,11 @@
         <div class="cta container-sml">
             <div class="text">
                 <h3>Call to action! It's time!</h3>
-                <span class="cta-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</span>
+                <p class="cta-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
             </div>
-            <button>Sign up</button>
+            <div class="cta-btn">
+                <button>Sign up</button>
+            </div>
         </div>
     </section>
 

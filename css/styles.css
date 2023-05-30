@@ -68,6 +68,7 @@ h1 {
   font-size: clamp(1rem, 4.5vw + 1rem,4.5em);
   line-height: 1.1em;
   font-weight: 600;
+  text-shadow: 3px 2px 6px var(--dark-grey);
 }
 
 h2 {
@@ -108,7 +109,7 @@ img {
 }
 
 .container-xsml {
-  max-width: 40vw;
+  max-width: 40%;
   margin: 0 auto;
 }
 
@@ -121,15 +122,17 @@ img {
     background-attachment: fixed;
 }
 
-header {
+header .container {
     display: flex;
     justify-content: space-between;
     padding: 2em 1em;
+    flex-wrap: wrap;
 }
 
 .logo {
-    font-size: 32px;
-    font-weight: 600;
+  font-size: 32px;
+  font-weight: 600;
+  text-shadow: 3px 2px 6px var(--dark-grey);
 }
 
 nav {
@@ -146,6 +149,7 @@ nav ul {
 nav a {
     color: #fff;
     position: relative;
+    text-shadow: 3px 2px 2px rgba(0,0,0,.6);
 }
 
 nav a::before {
@@ -168,7 +172,9 @@ nav a::before {
     0px 0px 0.5em 0px var(--teal);
 }
 
-nav a:hover::before {
+
+nav a:hover::before,
+nav a.active::before {
 transform-origin: left;
 transform: scaleX(1);
 }
@@ -283,34 +289,36 @@ transform: scaleX(1);
 }
 
 .quote {
-    font-size: clamp(1rem, 3vw + 1rem,3rem);
     margin: 0;
-    padding: 2em 0;
-    font-weight: 300;
-    position: relative;
+    padding: 4em 0;
     border: 10px solid;
     border-image-slice: 1;
     border-width: 2px;
-    border-image-source: linear-gradient(to left, rgba(13, 17, 23, 1), #743ad5, #d53a9d, rgba(13, 17, 23, 1));
+    border-image-source: linear-gradient(to right bottom, rgba(13, 17, 23, 1) 0%, #743ad5 25%, #d53a9d 50%,  #743ad5 75%, rgba(13, 17, 23, 1) 100%);
     border-left: 0;
     border-right: 0;
 }
 
-/*.quote::before {
-  content: "\e244";
-  font-family: "Material Icons Rounded";
-  position: absolute;
-  z-index: 1;
-  font-size: 4em;
-  left: -0.5em;
-  color: var(--pink);
-}*/
+.quote p {
+  font-size: clamp(1rem, 3vw + 1rem,3rem);
+  line-height: 1.3em;
+  font-weight: 300;
+  background: linear-gradient(to bottom right, var(--teal), #743ad5);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
 
 .author {
-    display: block;
-    text-align: right;
-    font-size: clamp(1rem, 2vw + 1rem,2rem);
-    font-weight: 600;
+  color: #fff;
+  background: none;
+  display: flex;
+  width: fit-content;
+  margin-left: auto;
+  margin-top: 1.2em;
+  text-align: right;
+  font-size: clamp(.8em, 1.6vw + 1em,2em);
+  font-weight: 500;
+  letter-spacing: 0.08em;
 }
 
 .author::before {
@@ -323,18 +331,27 @@ transform: scaleX(1);
 }
 
 .cta {
-    display: flex;
-    justify-content: space-between;
-    border-radius: 0.4em;
-    padding: 1.8em 3em;
-    background-color: #fff;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  border-radius: 0.4em;
+  padding: 1.8em 3em;
+  background-color: #fff;
+}
+
+.cta .text {
+  flex: 3;
+}
+
+.cta button {
+  flex: 1;
 }
 
 footer {
     background-color: var(--dark-purple);
     color: #fff;
     text-align: center;
-    padding: 1.3em;
+    padding: 2em;
     font-size: 1.1em;
 }
 
